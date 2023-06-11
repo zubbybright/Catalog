@@ -3,7 +3,7 @@ using Catalog.Repositories;
 using Catalog.Entities;
 
 namespace Catalog.Controllers
-{   
+{
     [ApiController]
     [Route("items")]
 
@@ -16,10 +16,24 @@ namespace Catalog.Controllers
             repository = new InMemItemsRepository();
         }
 
+        //GET /items
         [HttpGet]
-        public IEnumerable<Item> GetItems(){
+        public IEnumerable<Item> GetItems()
+        {
             var items = repository.GetItems();
             return items;
+        }
+
+        //GET /items/{id}
+        [HttpGet("{id}")]
+        public ActionResult<Item> GetItem(Guid id)
+        {
+            var item = repository.GetItem(id);
+            if (item is null)
+            {
+                return NotFound();
+            }
+            return item;
         }
     }
 }
