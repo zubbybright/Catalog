@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jYQRgcg6nFabpKPbXBWj05NZu8yioDlmMDws3ML6d6MFa/eUs4G5w6jCC4ekQbCr1u6Fq1vU9d9vXF2ttqV7MQ==",
+  "dgSpecHash": "Z01APdL37nwcDJGBhp+FzrPFCQ0lAOOF8QQK7HasRKDvYY/QaSnwINHwKugYxIYRHhsI3FFq/kHLiNXVAyA2VQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Zubby\\OneDrive\\Documents\\Practices\\Catalog\\Catalog.csproj",
+  "projectFilePath": "C:\\Users\\Zubby\\OneDrive\\Documents\\practices\\Catalog\\Catalog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Zubby\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\Zubby\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
