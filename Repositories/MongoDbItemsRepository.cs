@@ -4,14 +4,15 @@ using MongoDB.Driver;
 namespace Catalog.Repositories
 {
     public class MongoDbItemsRepository : IItemsRepository
-    {   
+    {
         private const string databaseName = "catalog";
-         private const string collectionName = "items";
+        private const string collectionName = "items";
         private readonly IMongoCollection<Item> itemsCollection;
+        
         public MongoDbItemsRepository(IMongoClient mongoClient)
         {
             IMongoDatabase database = mongoClient.GetDatabase(databaseName);
-            itemsCollection = database.GetCollection<Item>(collectionName); 
+            itemsCollection = database.GetCollection<Item>(collectionName);
         }
 
         public IEnumerable<Item> GetItems()

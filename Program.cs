@@ -1,4 +1,7 @@
 using Catalog.Repositories;
+using Catalog.Settings;
+using MongoDB.Driver;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IItemsRepository, InMemItemsRepository>();
+ConfigurationManager configuration = builder.Configuration; 
+IWebHostEnvironment environment = builder.Environment;
+
+builder.Services.AddSingleton<IMongoClient>(serviceProvider =>
+{
+    var settings = configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
+    return new MongoClient(settings.ConnectionString);
+});
 
 var app = builder.Build();
 
