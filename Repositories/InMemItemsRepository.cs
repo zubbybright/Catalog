@@ -23,21 +23,24 @@ namespace Catalog.Repositories
             return await Task.FromResult(item);
         }
 
-        public void CreateItemAsync(Item item)
+        public async Task CreateItemAsync(Item item)
         {
             items.Add(item);
+            await Task.CompletedTask;
         }
 
-        public void UpdateItemAsync(Item item)
+        public async Task UpdateItemAsync(Item item)
         {
             var index = items.FindIndex(existingItem => existingItem.Id == item.Id);
             items[index] = item;
+            await Task.CompletedTask;
         }
 
-        public void DeleteItemAsync(Guid id)
+        public async Task DeleteItemAsync(Guid id)
         {
             var index = items.FindIndex(existingItem => existingItem.Id == id);
             items.RemoveAt(index);
+            await Task.CompletedTask;
         }
     }
 }
